@@ -1,0 +1,29 @@
+.singleQuestion{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 30px;
+    width: 400px;
+    border-radius: 5px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: #fff;
+}
+
+.question{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+.answer{
+    padding: 10px;
+    text-align: justify;
+
+}
+button{
+    cursor: pointer;
+    outline: none;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+}
