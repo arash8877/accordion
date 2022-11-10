@@ -1,27 +1,27 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "./Question.css";
 import { FaPlusCircle, FaMinusCircle } from "react-icons/fa";
-import info from './info'
+import info from "./info";
 
-const Question = () => {
-   
-   const [question, setQuestion] = useState({})
+const Question = ({title, description}) => {
+  const [showAnswer, setShowAnswer] = useState(false);
+  const handleClick = () => {
+    setShowAnswer(!showAnswer);
+  };
 
   return (
     <div className="singleQuestion">
       <div className="question">
-        <p>What is react JS?</p>
-        <button><FaPlusCircle/></button>
+        <h5>{title}</h5>
+        <button onClick={handleClick}>
+          {showAnswer ? <FaMinusCircle/>: <FaPlusCircle/> }
+        </button>
       </div>
-      <div className="answer">
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipam nulla excepturi, est
-          nemo delectus numquam magnam dolore, nam animi optio. Sed rem odio
-          veniam suscipit quaerat doloribus eaque qui vitae, aut itaque eveniet
-          et. Adipisci exercitationem, id eveniet laudantium minus nesciunt
-          vitae similique nequ
+      {showAnswer ? (
+        <p className="answer">
+          {description}
         </p>
-      </div>
+      ) : null}
     </div>
   );
 };
